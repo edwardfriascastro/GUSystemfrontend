@@ -1,0 +1,36 @@
+query User($userId: String!) {
+  user(userId: $userId) {
+    id
+    creationDate
+    modificationDate
+    username
+    firstName
+    lastName
+  }
+}
+
+query Users {
+  users {
+    id
+    creationDate
+    modificationDate
+    username
+    firstName
+    lastName
+  }
+}
+
+mutation RemoveUser($userId: String!) {
+  removeUser(userId: $userId)
+}
+
+mutation SaveUser($user: UserInputType!) {
+  saveUser(user: $user) {
+    id
+    creationDate
+    modificationDate
+    username
+    firstName
+    lastName
+  }
+}

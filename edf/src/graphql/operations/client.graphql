@@ -1,0 +1,104 @@
+query Clients {
+  clients {
+    id
+    creationDate
+    modificationDate
+    username
+    firstName
+    lastName
+    email
+    projects {
+      id
+      creationDate
+      modificationDate
+      description
+      name
+      users {
+        id
+        creationDate
+        modificationDate
+        username
+        firstName
+        lastName
+      }
+      clientCreator {
+        id
+        creationDate
+        modificationDate
+        username
+        firstName
+        lastName
+        email
+      }
+    }
+  }
+}
+
+query Me {
+  me {
+    token
+    client {
+      id
+      creationDate
+      modificationDate
+      username
+      firstName
+      lastName
+      email
+    }
+  }
+}
+
+mutation Login($usernameOrEmail: String!, $password: String!) {
+  login(usernameOrEmail: $usernameOrEmail, password: $password) {
+    token
+    client {
+      id
+      creationDate
+      modificationDate
+      username
+      firstName
+      lastName
+      email
+    }
+  }
+}
+
+mutation SaveClient($client: ClientInputType!) {
+  saveClient(client: $client) {
+    id
+    creationDate
+    modificationDate
+    username
+    firstName
+    lastName
+    email
+  }
+}
+
+mutation UpdateClient($client: UpdateClientInputType!) {
+  updateClient(client: $client) {
+    id
+    creationDate
+    modificationDate
+    username
+    firstName
+    lastName
+    email
+    projects {
+      id
+      creationDate
+      modificationDate
+      description
+      name
+      users {
+        id
+        creationDate
+        modificationDate
+        username
+        firstName
+        lastName
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+query Projects {
+  projects {
+    id
+    creationDate
+    modificationDate
+    description
+    name
+    clientCreator {
+      id
+      creationDate
+      modificationDate
+      username
+      firstName
+      lastName
+      email
+    }
+    users {
+      id
+      creationDate
+      modificationDate
+      username
+      firstName
+      lastName
+    }
+  }
+}
+query Project($projectId: String!) {
+  project(projectId: $projectId) {
+    id
+    creationDate
+    modificationDate
+    description
+    name
+    users {
+      id
+      creationDate
+      modificationDate
+      username
+      firstName
+      lastName
+    }
+    clientCreator {
+      id
+      creationDate
+      modificationDate
+      username
+      firstName
+      lastName
+      email
+    }
+  }
+}
+
+mutation RemoveProject($projectId: String!) {
+  removeProject(projectId: $projectId)
+}
+
+mutation SaveProject($project: ProjectInputType!) {
+  saveProject(project: $project) {
+    id
+    creationDate
+    modificationDate
+    description
+    name
+    clientCreator {
+      id
+      creationDate
+      modificationDate
+      username
+      firstName
+      lastName
+      email
+    }
+    users {
+      id
+      creationDate
+      modificationDate
+      username
+      firstName
+      lastName
+    }
+  }
+}

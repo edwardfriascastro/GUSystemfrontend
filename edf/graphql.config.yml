@@ -1,0 +1,8 @@
+schema: src/graphql/generated/graphql.schema.json
+extensions:
+  endpoints:
+    GUSystem GraphQL Endpoint:
+      url: http://localhost:8080
+      headers:
+        user-agent: JS GraphQL
+      introspect: true
